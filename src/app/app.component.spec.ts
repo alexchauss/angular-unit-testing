@@ -1,12 +1,15 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 
+import { RouterTestingModule } from '@angular/router/testing';
+
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent
       ],
+      imports: [ RouterTestingModule ]
     }).compileComponents();
   }));
 
@@ -22,10 +25,10 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('angular-unit-testing');
   });
 
-  it('should render title', () => {
+  it('should render contact link', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('angular-unit-testing app is running!');
+    expect(compiled.querySelector('a').textContent).toContain('Contact');
   });
 });

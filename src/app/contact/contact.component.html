@@ -1,0 +1,20 @@
+<div>
+  {{ text }}
+</div>
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+  <p>
+      <label>First Name:</label>
+      <input type="text" formControlName="name">
+  </p>
+  <p>
+    <label>Email:</label>
+    <input type="email" formControlName="email">
+</p>
+  <p>
+      <label>Password:</label>
+      <input type="password" formControlName="password">
+  </p>
+  <p>
+      <button type="submit" [disabled]="contactForm.invalid">Submit</button>
+  </p>
+</form>
